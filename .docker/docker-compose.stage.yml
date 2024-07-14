@@ -1,0 +1,27 @@
+version: '3'
+
+volumes:
+  go-app-skeleton-dev-postgres-data: {}
+
+services:
+
+  go-app-skeleton:
+    image: registry-tc.dev.codd.local/v2x/go-app-skeleton/stage:latest
+    container_name: go-app-skeleton
+    networks:
+      - go-app-skeleton-dev-network
+#    restart: always
+    depends_on:
+      - go-app-skeleton-dev-postgres
+    entrypoint: ./go-app-skeleton
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_USER=${POSTGRES_PASSWORD}
+    ports: #  host_port:docker_port
+      - "8080:8080"    # http (web-core)
+      - "8081:8081"    # http (rest - api)
+      - "5451:5451"    # for metrics
+
+networks:
+  go-app-skeleton-dev-network:
+

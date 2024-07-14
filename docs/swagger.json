@@ -1,0 +1,62 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is Swagger docs for HTTP REST API reports service",
+        "title": "Reports service Swagger HTTP API",
+        "contact": {
+            "name": "API Support",
+            "email": "arseny.sazanov@gmail.com"
+        },
+        "license": {
+            "name": "None",
+            "url": "None"
+        },
+        "version": "1.0.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/health": {
+            "get": {
+                "description": "health check",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Server Base"
+                ],
+                "summary": "Health check",
+                "operationId": "Health",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/ready": {
+            "get": {
+                "description": "ready check",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Server Base"
+                ],
+                "summary": "Ready check",
+                "operationId": "Ready",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}

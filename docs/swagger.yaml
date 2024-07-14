@@ -1,0 +1,42 @@
+basePath: /
+host: localhost:8080
+info:
+  contact:
+    email: arseny.sazanov@gmail.com
+    name: API Support
+  description: This is Swagger docs for HTTP REST API reports service
+  license:
+    name: None
+    url: None
+  title: Reports service Swagger HTTP API
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      consumes:
+      - application/json
+      description: health check
+      operationId: Health
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Health check
+      tags:
+      - Server Base
+  /ready:
+    get:
+      consumes:
+      - application/json
+      description: ready check
+      operationId: Ready
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Ready check
+      tags:
+      - Server Base
+swagger: "2.0"

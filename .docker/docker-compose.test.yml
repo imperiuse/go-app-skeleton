@@ -1,0 +1,21 @@
+version: '3'
+
+volumes:
+  go-app-skeleton-test-postgres-data: {}
+
+services:
+  go-app-skeleton-test-postgres:
+    image: postgres:16
+    container_name: go-app-skeleton-test-postgres
+    networks:
+      - go-app-skeleton-test-network
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - go-app-skeleton-test-postgres-data:/var/lib/postgresql/data
+    ports: #host_port : docker_port
+      - "5433:5432"
+
+networks:
+  go-app-skeleton-test-network: {}

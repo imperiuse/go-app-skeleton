@@ -1,0 +1,2 @@
+# We don't use docker-compose in production for many reasons.
+# @See README and ansible folder more info
